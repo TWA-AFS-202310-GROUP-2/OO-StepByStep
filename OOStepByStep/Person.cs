@@ -16,7 +16,7 @@
         public int Age { get; set; }
         public string Name { get; set; }
 
-        public string SelfIntroduce()
+        public virtual string SelfIntroduce()
         {
             return $"My name is {Name}, I am {Age} years old.";
         }
