@@ -25,8 +25,27 @@ namespace OOStepByStepTest
         public void Should_return_name_and_age_when_self_introduce_given_a_teacher()
         {
             var p = new Teacher("Amy", 30);
+
             var res = p.SelfIntroduce();
             Assert.Equal("My name is Amy, I am 30 years old. I am a teacher.", res);
+        }
+
+        [Fact]
+        public void Should_return_name_age_class_when_self_introduce_given_a_student_with_class()
+        {
+            var p = new Student("Tom", 18, 2);
+
+            var res = p.SelfIntroduce();
+            Assert.Equal("My name is Tom, I am 18 years old. I am a student of class 2", res);
+        }
+
+        [Fact]
+        public void Should_return_name_age_class_when_self_introduce_given_a_teacher_with_class()
+        {
+            var p = new Teacher("Amy", 30, 2);
+
+            var res = p.SelfIntroduce();
+            Assert.Equal("My name is Amy, I am 30 years old. I am a teacher of class 2", res);
         }
     }
 }
