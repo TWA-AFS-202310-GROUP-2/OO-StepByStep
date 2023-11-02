@@ -8,7 +8,7 @@ namespace OOStepByStep
 {
     public class Person
     {
-        private string name;
+        public string name;
         private int age;
         private int classNumber;
         // AC1: A person can introduce him/herself with name and age like: "My name is Tom. I am 21 years old."
