@@ -19,10 +19,5 @@ namespace OOStepByStep
                 return $"{base.Introduce()} I am a student of class {this.ClassNumber}.";
             }
         }
-
-        public string Welcome(string newStudent)
-        {
-            return $"{base.Introduce()} I am a student of class {this.ClassNumber}.";
-        }
     }
 }
