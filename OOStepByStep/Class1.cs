@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     public class Class1
@@ -19,7 +20,7 @@
 
         public string AddStudents(Student student)
         {
-            if (StudentList.Contains(student))
+            if (StudentList.Any(item => item.Name == student.Name))
             {
                 return "The student has been in our class.";
             }

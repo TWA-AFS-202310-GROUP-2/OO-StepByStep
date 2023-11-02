@@ -79,5 +79,24 @@ namespace OOStepByStepTest
             Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of Class 2. Welcome Ben join Class 2.\r\n" +
                 "My name is Lily. I am 18 years old. I am a student of Class 2. Welcome Ben join Class 2.\r\n", reulst);
         }
+
+        [Fact]
+        public void Should_return_error_When_add_existed_student_Given_student()
+        {//given
+            Class1 class1 = new Class1("Class 2")
+            {
+                Teacher = new Teacher("Class 2") { Name = "Amy", Age = 30 },
+                StudentList = new List<Student>
+                {
+                    new Student("Class 2") { Name = "Lily", Age = 18 },
+                    new Student("Class 2") { Name = "John", Age = 19 },
+                },
+            };
+            var newstudent = new Student("Class 2") { Name = "Lily", Age = 18 };
+            //when
+            string reulst = class1.AddStudents(newstudent);
+            //then
+            Assert.Equal("The student has been in our class.", reulst);
+        }
     }
 }
