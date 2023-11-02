@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace OOStepByStepTest
 {
     using OOStepByStep;
@@ -39,6 +42,60 @@ namespace OOStepByStepTest
             string introduction = teacher.Speak();
 
             Assert.Equal($"My name is {name}, I am {age} years old. I am a teacher.", introduction);
+        }
+
+        [Fact]
+        public void Should_return_teacher_in_class_introduction_when_teacher_given_introduction_in_class()
+        {
+            string name = "Jenny";
+            int age = 32;
+
+            var teacher = new Teacher(name, age,"class1");
+            var class1 = new Class();
+            class1.AddPersonToClass(teacher);
+            var introduction = class1.Speak();
+            Console.WriteLine(introduction[0]);
+            Assert.Equal(new List<string>
+            {
+                "My name is Jenny, I am 32 years old. I am a teacher of class1."
+            }, introduction);
+        }
+
+        [Fact]
+        public void Should_return_student_in_class_introduction_when_student_given_introduction_in_class()
+        {
+            string name = "Tom";
+            int age = 14;
+
+            var student = new Student(name, age, "class1");
+            var class1 = new Class();
+            class1.AddPersonToClass(student);
+            var introduction = class1.Speak();
+            Console.WriteLine(introduction[0]);
+            Assert.Equal(new List<string>
+            {
+                "My name is Tom, I am 14 years old. I am a student of class1."
+            }, introduction);
+        }
+
+        [Fact]
+        public void Should_return_student_and_teacher_in_class_introduction_when_they_given_introduction_in_class()
+        {
+            string name = "Tom";
+            int age = 14;
+
+            var student = new Student("Tom", 14, "class1");
+            var teacher = new Teacher("Jenny", 32, "class1");
+            var class1 = new Class();
+            class1.AddPersonToClass(student);
+            class1.AddPersonToClass(teacher);
+            var introduction = class1.Speak();
+            Console.WriteLine(introduction[0]);
+            Assert.Equal(new List<string>
+            {
+                "My name is Tom, I am 14 years old. I am a student of class1.",
+                "My name is Jenny, I am 32 years old. I am a teacher of class1."
+            }, introduction);
         }
     }
 }
