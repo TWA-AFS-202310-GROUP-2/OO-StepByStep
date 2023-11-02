@@ -1,22 +1,13 @@
-﻿using System;
-using System.Xml.Linq;
-
-namespace OOStepByStep
+﻿namespace OOStepByStep
 {
     public class Person
     {
-        private string name;
-        private int age;
-
-        public Person(string name, int age)
-        {
-            this.name = name;
-            this.age = age;
-        }
+        public string Name { get; set; }
+        public int Age { get; set; }
 
         public virtual string Introduct()
         {
-            var introduction = $"My name is {name}. I am {age} years old.";
+            var introduction = $"My name is {Name}. I am {Age} years old.";
 
             return introduction;
         }

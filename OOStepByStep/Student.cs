@@ -2,20 +2,21 @@
 {
     public class Student : Person
     {
-        public Student(string name, int age) : base(name, age)
+        private string classIntroduction = string.Empty;
+
+        public Student(string className)
         {
+            this.classIntroduction = $" I am a student of {className}.";
         }
 
-        public string ClassName { get; set; }
-
-        //public override string Introduct()
-        //{
-        //    return $"{base.Introduct()} I am a student.";
-        //}
+        public Student()
+        {
+            this.classIntroduction = $" I am a student.";
+        }
 
         public override string Introduct()
         {
-            return $"{base.Introduct()} I am a student of {ClassName}.";
+            return $"{base.Introduct()}" + classIntroduction;
         }
     }
 }
