@@ -1,17 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace OOStepByStep;
 
 public class Class
 {
-    //public List<Student> students = new List<Student>();
-    //public Teacher teacher = new Teacher("Peggy",30);
     public List<Person> persons = new List<Person>();
-    public Class(){}
-
-
-    public void AddPersonToClass(Person person)
+    public List<string> AddPersonToClass(Person person)
     {
+        List<string> welcome = new List<string>();
+        if (persons.Count>0)
+        {
+            welcome = Speak();
+
+            string className = person is Student?(person as Student).className:(person as Teacher).className;
+            for(int i=0;i<welcome.Count;i++) 
+            {
+                welcome[i] = welcome[i] + $" Welcome {person.name} join {className}.";
+            }
+        }
+
         if (person is Student)
         {
             persons.Add(person);
@@ -22,11 +30,12 @@ public class Class
             {
                 if (pers is Teacher)
                 {
-                    return;
+                    return welcome;
                 }
             }
             persons.Add(person);
         }
+        return welcome;
     }
 
     public List<string> Speak()
@@ -47,5 +56,4 @@ public class Class
         }
         return allSpeak;
     }
-    
 }

@@ -81,9 +81,6 @@ namespace OOStepByStepTest
         [Fact]
         public void Should_return_student_and_teacher_in_class_introduction_when_they_given_introduction_in_class()
         {
-            string name = "Tom";
-            int age = 14;
-
             var student = new Student("Tom", 14, "class1");
             var teacher = new Teacher("Jenny", 32, "class1");
             var class1 = new Class();
@@ -96,6 +93,20 @@ namespace OOStepByStepTest
                 "My name is Tom, I am 14 years old. I am a student of class1.",
                 "My name is Jenny, I am 32 years old. I am a teacher of class1."
             }, introduction);
+        }
+
+        [Fact]
+        public void Should_return_welcome_in_class_introduction_when_they_welcome_newcomer_in_class()
+        {
+            var student = new Student("Tom", 14, "class1");
+            var teacher = new Teacher("Jenny", 32, "class1");
+            var class1 = new Class();
+            class1.AddPersonToClass(student);
+            var welcome = class1.AddPersonToClass(teacher);
+            Assert.Equal(new List<string>
+            {
+                "My name is Tom, I am 14 years old. I am a student of class1. Welcome Jenny join class1."
+            }, welcome);
         }
     }
 }
