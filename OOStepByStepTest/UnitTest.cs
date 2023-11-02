@@ -30,7 +30,7 @@ namespace OOStepByStepTest
         }
 
         [Fact]
-        public void Test_Student_Class_Introduction()
+        public void Should_return_msg_when_classnumber_given_and_student_introduce()
         {
             var student = new Student { Name = "Tom", Age = 18, ClassNumber = 2 };
             var result = student.Introduce();
@@ -38,7 +38,7 @@ namespace OOStepByStepTest
         }
 
         [Fact]
-        public void Test_Teacher_Class_Introduction()
+        public void Should_return_msg_when_classnumber_given_and_teacher_introduce()
         {
             var teacher = new Teacher { Name = "Amy", Age = 30, ClassNumber = 2 };
             var result = teacher.Introduce();
