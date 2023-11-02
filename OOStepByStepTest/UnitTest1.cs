@@ -15,7 +15,7 @@ namespace OOStepByStepTest
         [Fact]
         public void Test_Person_Introduction()
         {
-            var person = new Person { Name = "Tom", Age = 21 };
+            var person = new Person("Tom", 21);
 
             var result = person.Introduce();
 
@@ -25,7 +25,7 @@ namespace OOStepByStepTest
         [Fact]
         public void Test_Student_Introduction()
         {
-            var student = new Student { Name = "Tom", Age = 18 };
+            var student = new Student("Tom", 18);
 
             var result = student.Introduce();
 
@@ -35,11 +35,31 @@ namespace OOStepByStepTest
         [Fact]
         public void Test_Teacher_Introduction()
         {
-            var teacher = new Teacher { Name = "Amy", Age = 30 };
+            var teacher = new Teacher("Amy", 30);
 
             var result = teacher.Introduce();
 
             Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", result);
+        }
+
+        [Fact]
+        public void Test_Student_Class_Introduction()
+        {
+            var student = new Student("Tom", 18, 2);
+
+            var result = student.Introduce();
+
+            Assert.Equal("My name is Tom. I am 18 years old. I am a student of class 2.", result);
+        }
+
+        [Fact]
+        public void Test_Teacher_Class_Introduction()
+        {
+            var teacher = new Teacher("Amy", 30, 2);
+
+            var result = teacher.Introduce();
+
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2.", result);
         }
     }
 }
