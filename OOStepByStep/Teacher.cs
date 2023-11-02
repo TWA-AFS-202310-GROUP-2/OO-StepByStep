@@ -6,9 +6,15 @@
         {
         }
 
+        public string ClassName { get; set; }
+        //public override string Introduct()
+        //{
+        //    return $"{base.Introduct()} I am a teacher.";
+        //}
+
         public override string Introduct()
         {
-            return $"{base.Introduct()} I am a teacher.";
+            return $"{base.Introduct()} I am a teacher of {ClassName}.";
         }
     }
 }

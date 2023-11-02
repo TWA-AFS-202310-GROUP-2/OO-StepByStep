@@ -15,25 +15,47 @@ namespace OOStepByStepTest
             Assert.Equal("My name is Tom. I am 21 years old.", introduction);
         }
 
+        //[Fact]
+        //public void Should_return_student_name_age_When_Introduct_Given_name_age_student()
+        //{//given
+        //    var student = new Student("Tom", 21);
+        //    //when
+        //    string studentIntroduction = student.Introduct();
+        //    //then
+        //    Assert.Equal("My name is Tom. I am 21 years old. I am a student.", studentIntroduction);
+        //}
+
+        //[Fact]
+        //public void Should_return_teacher_name_age_When_Introduct_Given_name_age_teacher()
+        //{//given
+        //    var teacher = new Teacher("Amy", 30);
+        //    //var teacher = new Teacher("Amy", 30);
+        //    //when
+        //    string teacherIntroduction = teacher.Introduct();
+        //    //then
+        //    Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", teacherIntroduction);
+        //}
+
         [Fact]
-        public void Should_return_student_name_age_When_Introduct_Given_name_age_student()
+        public void Should_return_student_class_name_age_When_Introduct_Given_name_age_student()
         {//given
             var student = new Student("Tom", 21);
+            student.ClassName = "Class2";
             //when
             string studentIntroduction = student.Introduct();
             //then
-            Assert.Equal("My name is Tom. I am 21 years old. I am a student.", studentIntroduction);
+            Assert.Equal("My name is Tom. I am 21 years old. I am a student of Class2.", studentIntroduction);
         }
 
         [Fact]
-        public void Should_return_teacher_name_age_When_Introduct_Given_name_age_teacher()
+        public void Should_return_teacher_class_name_age_When_Introduct_Given_name_age_teacher()
         {//given
             var teacher = new Teacher("Amy", 30);
-            //var teacher = new Teacher("Amy", 30);
+            teacher.ClassName = "Class2";
             //when
-            string studentIntroduction = teacher.Introduct();
+            string teacherIntroduction = teacher.Introduct();
             //then
-            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", studentIntroduction);
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of Class2.", teacherIntroduction);
         }
     }
 }
