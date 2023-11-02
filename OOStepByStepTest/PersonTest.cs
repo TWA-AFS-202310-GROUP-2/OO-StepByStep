@@ -19,7 +19,29 @@ namespace OOStepByStepTest
 
             string msg = person.SelfIntro();
 
-            Assert.Equal($"My name is Tom. I am 21 years old.", msg);
+            Assert.Equal($"My name is {name}. I am {age} years old.", msg);
+        }
+
+        [Theory]
+        [InlineData("Tom", 18)]
+        public void Should_show_msg_when_student_self_introduce(string name, int age)
+        {
+            Student student = new Student(name, age);
+
+            string msg = student.SelfIntro();
+
+            Assert.Equal($"My name is {name}. I am {age} years old. I am a student.", msg);
+        }
+
+        [Theory]
+        [InlineData("Amy", 30)]
+        public void Should_show_msg_when_teacher_self_introduce(string name, int age)
+        {
+            Teacher teacher = new Teacher(name, age);
+
+            string msg = teacher.SelfIntro();
+
+            Assert.Equal($"My name is {name}. I am {age} years old. I am a teacher.", msg);
         }
     }
 }
