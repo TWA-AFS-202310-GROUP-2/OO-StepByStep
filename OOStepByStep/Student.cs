@@ -16,10 +16,10 @@ namespace OOStepByStep
         {
         }
 
-        public Student(string name, int age, int classNumber) : base(name, age)
-        {
-            ClassNumber = classNumber;
-        }
+        //public Student(string name, int age, int classNumber) : base(name, age)
+        //{
+        //    ClassNumber = classNumber;
+        //}
 
         public int ClassNumber { get; set; } = -1;
 
@@ -32,7 +32,7 @@ namespace OOStepByStep
             }
             else
             {
-                return str + $" I am a student of class {ClassNumber}";
+                return str + $" I am a student of class {ClassNumber}.";
             }
         }
     }
