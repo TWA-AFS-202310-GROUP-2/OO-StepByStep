@@ -10,6 +10,7 @@ namespace OOStepByStep
     {
         public string Name { get; set; }
         public int Age { get; set; }
+        public int ClassNumber { get; set; } = -1;
 
         public virtual string Introduce()
         {

@@ -28,5 +28,21 @@ namespace OOStepByStepTest
             var result = teacher.Introduce();
             Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", result);
         }
+
+        [Fact]
+        public void Test_Student_Class_Introduction()
+        {
+            var student = new Student { Name = "Tom", Age = 18, ClassNumber = 2 };
+            var result = student.Introduce();
+            Assert.Equal("My name is Tom. I am 18 years old. I am a student of class 2.", result);
+        }
+
+        [Fact]
+        public void Test_Teacher_Class_Introduction()
+        {
+            var teacher = new Teacher { Name = "Amy", Age = 30, ClassNumber = 2 };
+            var result = teacher.Introduce();
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2.", result);
+        }
     }
 }

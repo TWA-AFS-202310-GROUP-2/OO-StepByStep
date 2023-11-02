@@ -10,7 +10,14 @@ namespace OOStepByStep
     {
         public override string Introduce()
         {
-            return $"{base.Introduce()} I am a teacher.";
+            if (this.ClassNumber == -1)
+            {
+                return $"{base.Introduce()} I am a teacher.";
+            }
+            else
+            {
+                return $"{base.Introduce()} I am a teacher of class {this.ClassNumber}.";
+            }
         }
     }
 }
