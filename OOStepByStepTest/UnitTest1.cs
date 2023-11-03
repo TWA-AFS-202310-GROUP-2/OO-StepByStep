@@ -98,5 +98,22 @@ namespace OOStepByStepTest
             //then
             Assert.Equal("The student has been in our class.", reulst);
         }
+
+        [Fact]
+        public void Should_return_null_When_add_student_Given_null_class()
+        {//given
+            Class1 class1 = new Class1("Class 2")
+            {
+                Teacher = new Teacher(),
+                StudentList = new List<Student>
+                {
+                },
+            };
+            var newstudent = new Student("Class 2") { Name = "Lily", Age = 18 };
+            //when
+            string reulst = class1.AddStudents(newstudent);
+            //then
+            Assert.Equal("Lily is the first student of Class 2", reulst);
+        }
     }
 }
