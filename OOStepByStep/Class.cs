@@ -13,8 +13,13 @@ namespace OOStepByStep
         private List<Student> students = new List<Student>();
         public int classNumber;
 
-       // private int _classNumber;
+        // private int _classNumber;
         //public int ClassNumber { get=>_classNumber; }
+        public Class(int classNumber)
+        { 
+            this.classNumber = classNumber;
+        }
+
         public Class(int classNumber, Teacher teacher)
         {
             this.classNumber = classNumber;
@@ -26,17 +31,22 @@ namespace OOStepByStep
             students.Add(student);
             student.classnum = classNumber;
             StringBuilder modifiedIntro = new StringBuilder();
-            modifiedIntro.AppendLine($"{teacher.SelfIntro()} Welcome {student.name} join class {this.classNumber}.");
-            foreach (var onestudent in students)
+            if (students.Count == 1)
             {
-                if (onestudent.name != student.name)
+                modifiedIntro.AppendLine("");
+            }
+            else
+            {
+                modifiedIntro.AppendLine($"{teacher.SelfIntro()} Welcome {student.name} join class {this.classNumber}.");
+                foreach (var onestudent in students)
                 {
-                    modifiedIntro.AppendLine($"{onestudent.SelfIntro()} Welcome {student.name} join class {this.classNumber}.");
+                    if (onestudent.name != student.name)
+                    {
+                        modifiedIntro.AppendLine($"{onestudent.SelfIntro()} Welcome {student.name} join class {this.classNumber}.");
+                    }
                 }
             }
             return modifiedIntro.ToString();
-
-
         }
     }
 }

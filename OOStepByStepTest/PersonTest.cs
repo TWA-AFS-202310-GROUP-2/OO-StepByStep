@@ -69,6 +69,24 @@ namespace OOStepByStepTest
             Assert.Equal($"My name is {name}. I am {age} years old. I am a teacher of class {classnum}", msg);
         }
 
+        // AC4
+        [Fact]
+        public void Should_show_empty_when_first_student_add_to_class()
+        {
+            int classnum = 2;
+            string student_name = "Tim";
+            int student_age = 18;
+
+            Class class2 = new Class(classnum);
+            var studentTim = new Student(student_name, student_age, classnum);
+
+            string result = class2.AddStudent(studentTim);
+
+            string expectedOutput ="\r\n";
+            Assert.Equal(expectedOutput, result);
+
+        }
+
         [Fact]
         public void Should_show_intro_msg_when_addStudent_to_class()
         {
