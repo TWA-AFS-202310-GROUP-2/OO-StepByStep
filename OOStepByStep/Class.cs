@@ -25,16 +25,16 @@ namespace OOStepByStep
         {
             students.Add(student);
             student.classnum = classNumber;
-            StringBuilder modifiedintro = new StringBuilder();
-            modifiedintro.AppendLine($"{teacher.SelfIntro()}. Welcome {student.name} join class {this.classNumber}.");
+            StringBuilder modifiedIntro = new StringBuilder();
+            modifiedIntro.AppendLine($"{teacher.SelfIntro()} Welcome {student.name} join class {this.classNumber}.");
             foreach (var onestudent in students)
             {
                 if (onestudent.name != student.name)
                 {
-                    modifiedintro.AppendLine($"{onestudent.SelfIntro()}. Welcome {student.name} join class {this.classNumber}.");
+                    modifiedIntro.AppendLine($"{onestudent.SelfIntro()} Welcome {student.name} join class {this.classNumber}.");
                 }
             }
-            return modifiedintro.ToString();
+            return modifiedIntro.ToString();
 
 
         }
