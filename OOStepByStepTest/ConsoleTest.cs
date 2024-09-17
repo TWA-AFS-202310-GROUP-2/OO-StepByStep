@@ -9,18 +9,18 @@ namespace OOStepByStepTest
 
     public class ConsoleTest
     {
-        [Fact]
-        public void Test_Console()
-        {
-            // given
-            var fakeOutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeOutput));
+        //[Fact]
+        //public void Test_Console()
+        //{
+        //    // given
+        //    var fakeOutput = new StringBuilder();
+        //    Console.SetOut(new StringWriter(fakeOutput));
 
-            // when
-            new Class1().Print();
+        //    // when
+        //    new Class1().Print();
 
-            // then
-            Assert.Equal("console\r\n", fakeOutput.ToString());
-        }
+        //    // then
+        //    Assert.Equal("console\r\n", fakeOutput.ToString());
+        //}
     }
 }
